@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RappersService } from '../rappers.service';
 
 @Component({
   selector: 'app-rappers',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RappersComponent implements OnInit {
 
-  constructor() { }
+  rappers: Array<any>;
+  constructor(private rappersService: RappersService) { }
 
   ngOnInit() {
+    this.listar();
   }
-
+  listar() {
+    this.rappersService.listar().subscribe(dados => this.rappers = dados);
+  }
 }
