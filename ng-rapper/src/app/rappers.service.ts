@@ -20,13 +20,13 @@ export class RappersService {
 return this.http.get<any[]>(`${this.rappersUrl}`)
   }
    
-  getRapper(): Observable<Rapper[]> {
+  getRappers(): Observable<Rapper[]> {
     return this.http.get<Rapper[]>(this.rappersUrl).pipe(
       tap(Rapper => console.log('exibir lista de rappers'))
     );
   }
 
-  getRapper(id: number): Observable<Rapper> {
+  getRapperById(id: number): Observable<Rapper> {
     const url = `${this.rappersUrl}/${id}`;
     return this.http.get<Rapper>(url).pipe(
       tap(_ => console.log(`exibir lista de rappers por id=${id}`))
