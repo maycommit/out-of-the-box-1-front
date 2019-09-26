@@ -12,7 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class RappersService {
-  rappersUrl = 'http://localhost:8080/api/all';
+  rappersUrl = 'http://localhost:8080/api/rappers';
 
   constructor(private http: HttpClient) { }
 
