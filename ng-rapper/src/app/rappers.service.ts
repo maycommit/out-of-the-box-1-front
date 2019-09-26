@@ -48,6 +48,9 @@ return this.http.get<any[]>(`${this.rappersUrl}`)
   }
 
   deleteRapper (id): Observable<Rapper> {
-    const url = `${this.rappersUrl}/delete/${id}`
+    const url = `${this.rappersUrl}/delete/${id}`;
+    return this.http.delete<Rapper>(url, httpOptions).pipe (
+      tap(_ => console.log(`remove o rapper da lista por id=${id}`))
+    );
   }
 }
