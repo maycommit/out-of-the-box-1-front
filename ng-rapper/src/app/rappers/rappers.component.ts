@@ -15,6 +15,9 @@ export class RappersComponent implements OnInit {
     this.listar();
   }
   listar() {
-    this.rappersService.listar().subscribe(dados => this.rappers = dados);
+    this.rappersService.listar().subscribe (dados => {
+      this.rappers = dados
+      console.log(dados)
+    });
   }
 }
