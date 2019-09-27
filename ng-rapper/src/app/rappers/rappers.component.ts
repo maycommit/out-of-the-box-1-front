@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RappersService } from '../rappers.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-rappers',
@@ -7,7 +8,7 @@ import { RappersService } from '../rappers.service';
   styleUrls: ['./rappers.component.css']
 })
 export class RappersComponent implements OnInit {
-
+  name = new FormControl(''); 
   rappers: Array<any>;
   constructor(private rappersService: RappersService) { }
 
@@ -19,5 +20,8 @@ export class RappersComponent implements OnInit {
       this.rappers = dados
       console.log(dados)
     });
+  }
+  addRapper (){
+    this.name.value('rappers')
   }
 }
