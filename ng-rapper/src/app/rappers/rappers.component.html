@@ -7,14 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Rappers</h1>
     <div>
-    <h2>Rappers</h2>
     <form action="rapper">
         <li *ngFor="let rapper of rappers, index as i; trackBy: trackByFn">
             <ul>
             <span><img src="{{rapper.picture}}" width="380" height="300"></span>
             <br>
             <br>
+            <h3>
             Nome: <span>{{rapper.name}}</span>
             <br>
             <br>
@@ -25,10 +26,10 @@
             <br>
             <br>
             Singles: <span>{{rapper.single}}</span>
+            </h3>            
             </ul>    
         </li>
     </form>
 </div>
-    
 </body>
 </html>
