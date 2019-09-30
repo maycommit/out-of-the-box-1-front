@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { RappersComponent } from './rappers/rappers.component';
 import { RappersService} from './rappers.service';
 import { from } from 'rxjs';
-
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 
@@ -17,7 +17,8 @@ import { from } from 'rxjs';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ RappersService ],
   bootstrap: [AppComponent]
