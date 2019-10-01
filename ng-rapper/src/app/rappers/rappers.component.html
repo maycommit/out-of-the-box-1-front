@@ -29,8 +29,55 @@
             </ul>    
         </li>
 </div>
+<form [formGroup]= "rapperForm" (ngSubmit)="deleteRapper(rapper.Form.value)">
+        <div>
+            <label for="name">
+                Nome
+            </label>
+                <input id="name" type="text" formControlName="name">
+        </div>
+
+        <button class="button" type="submit">Deletar</button>
+</form>
 <div>
-    <form [formGroup]= "rapperForm" (ngSubmit)="onSubmit(rapperForm.value)">
+<form [formGroup]= "rapperForm" (ngSubmit)="updateRapper(rapperForm.value)">
+        <div>
+                <label for="picture">
+                    Foto
+                </label>
+                <input id="picture" type="text" formControlPicture="picture">
+            </div>
+            <div>
+                    <label for="name">
+                        Nome
+                    </label>
+                    <input id="name" type="text" formControlName="name">
+            </div>
+            <div>
+                    <label for="age">
+                        Idade
+                    </label>
+                    <input id="age" type="number" formControlAge="age">
+            </div>
+            <div>
+                     <label for="album">
+                        Álbuns
+                    </label>
+                    <input id="album" type="text" formControlAlbum="album">
+            </div>
+            <div>
+                    <label for="single">
+                        Singles
+                    </label>
+                    <input id="single" type="text" formControlSingle="single">
+            </div>
+
+        <button class="button" type="submit">atualizar</button>
+
+</form>
+</div>
+<div>
+    <form [formGroup]= "rapperForm" (ngSubmit)="addRapper(rapperForm.value)">
         <div>
             <label for="picture">
                 Foto
