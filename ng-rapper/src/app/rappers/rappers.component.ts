@@ -24,7 +24,8 @@ export class RappersComponent implements OnInit {
       console.log(dados)
     });
   }
-  addRapper (){
-    this.name.value('rappers')
+  addRapper (rappersFormData){
+    console.log(rappersFormData)
+    this.rappersService.addRapper(rappersFormData)
   }
 }

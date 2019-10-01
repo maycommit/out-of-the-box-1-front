@@ -9,7 +9,6 @@
 <body>
     <h1>Rappers</h1>
     <div>
-    <form action="rapper">
         <li *ngFor="let rapper of rappers, index as i; trackBy: trackByFn">
             <ul>
             <span><img src="{{rapper.picture}}" width="380" height="300"></span>
@@ -29,12 +28,42 @@
             </h3>            
             </ul>    
         </li>
-    </form>
 </div>
 <div>
-    <form action="rapper" method="post">
-        <label for="name">Name</label>
-        <input type="text" [formControl]="name">
+    <form [formGroup]= "rapperForm" (ngSubmit)="onSubmit(rapperForm.value)">
+        <div>
+            <label for="picture">
+                Foto
+            </label>
+            <input id="picture" type="text" formControlPicture="picture">
+        </div>
+        <div>
+                <label for="name">
+                    Nome
+                </label>
+                <input id="name" type="text" formControlName="name">
+        </div>
+        <div>
+                <label for="age">
+                    Idade
+                </label>
+                <input id="age" type="number" formControlAge="age">
+        </div>
+        <div>
+                 <label for="album">
+                    Álbuns
+                </label>
+                <input id="album" type="text" formControlAlbum="album">
+        </div>
+        <div>
+                <label for="single">
+                    Singles
+                </label>
+                <input id="single" type="text" formControlSingle="single">
+        </div>
+
+                <button class="button" type="submit">Postar</button>
+
     </form>
 </div>
 
