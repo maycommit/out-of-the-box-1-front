@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RappersService } from '../rappers.service';
-import { FormControl } from '@angular/forms';
-import { FormBuilder } from '@angular/forms';
-import { from } from 'rxjs';
+import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { Rapper } from '../rapper';
 
 @Component({
   selector: 'app-rappers',
@@ -13,7 +12,11 @@ export class RappersComponent implements OnInit {
   name = new FormControl(''); 
   rappers: Array<any>;
   constructor(private rappersService: RappersService,
-     private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder) {
+
+    this.formBuilder.group({
+    })
+   }
 
   ngOnInit() {
     this.listar();
@@ -25,7 +28,17 @@ export class RappersComponent implements OnInit {
     });
   }
   addRapper (rappersFormData){
-    console.log(rappersFormData)
+    console.log(rappersFormData);
     this.rappersService.addRapper(rappersFormData)
+  }
+
+  deleteRapper(id, rappersFormData) {
+    console.log(rappersFormData);
+    this.rappersService.deleteRapper(rappersFormData);
+  }
+
+  updateRapper(id, rappersFormData){
+    console.log(rappersFormData)
+    this.rappersService.updateRapper(id, rappersFormData);
   }
 }
