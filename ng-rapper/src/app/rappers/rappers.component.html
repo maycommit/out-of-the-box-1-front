@@ -1,118 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Rappers</h1>
     <div>
         <li *ngFor="let rapper of rappers, index as i; trackBy: trackByFn">
             <ul>
-            <span><img src="{{rapper.picture}}" width="380" height="300"></span>
-            <br>
-            <br>
-            <h3>
-            Nome: <span>{{rapper.name}}</span>
-            <br>
-            <br>
-            Idade: <span>{{rapper.age}}</span>
-            <br>
-            <br>
-            Álbuns: <span>{{rapper.album}}</span>
-            <br>
-            <br>
-            Singles: <span>{{rapper.single}}</span>
-            </h3>            
-            </ul>    
+                <span><img src="{{rapper.picture}}" width="380" height="300"></span>
+                <br>
+                <br>
+                <h3>
+                    Nome: <span>{{rapper.name}}</span>
+                    <br>
+                    <br>
+                    Idade: <span>{{rapper.age}}</span>
+                    <br>
+                    <br>
+                    Álbuns: <span>{{rapper.album}}</span>
+                    <br>
+                    <br>
+                    Singles: <span>{{rapper.single}}</span>
+                </h3>
+            </ul>
+            <button (click)="deleteRapper(rapper.id)">Deletar</button>
+            <button (click)="updateRapper(rapper.id)">Editar</button>
         </li>
-</div>
-<form [formGroup]= "rapperForm" (ngSubmit)="deleteRapper(rapper.Form.value)">
-        <div>
-            <label for="name">
-                Nome
-            </label>
-                <input id="name" type="text" formControlName="name">
-        </div>
-
-        <button class="button" type="submit">Deletar</button>
-</form>
-<div>
-<form [formGroup]= "rapperForm" (ngSubmit)="updateRapper(rapperForm.value)">
-        <div>
+    </div>
+    <div>
+        <!-- <form [formGroup]="rapperForm" (ngSubmit)="updateRapper(rapperForm.value)">
+            <div>
                 <label for="picture">
                     Foto
                 </label>
                 <input id="picture" type="text" formControlPicture="picture">
             </div>
             <div>
-                    <label for="name">
-                        Nome
-                    </label>
-                    <input id="name" type="text" formControlName="name">
-            </div>
-            <div>
-                    <label for="age">
-                        Idade
-                    </label>
-                    <input id="age" type="number" formControlAge="age">
-            </div>
-            <div>
-                     <label for="album">
-                        Álbuns
-                    </label>
-                    <input id="album" type="text" formControlAlbum="album">
-            </div>
-            <div>
-                    <label for="single">
-                        Singles
-                    </label>
-                    <input id="single" type="text" formControlSingle="single">
-            </div>
-
-        <button class="button" type="submit">atualizar</button>
-
-</form>
-</div>
-<div>
-    <form [formGroup]= "rapperForm" (ngSubmit)="addRapper(rapperForm.value)">
-        <div>
-            <label for="picture">
-                Foto
-            </label>
-            <input id="picture" type="text" formControlPicture="picture">
-        </div>
-        <div>
                 <label for="name">
                     Nome
                 </label>
                 <input id="name" type="text" formControlName="name">
-        </div>
-        <div>
+            </div>
+            <div>
                 <label for="age">
                     Idade
                 </label>
                 <input id="age" type="number" formControlAge="age">
-        </div>
-        <div>
-                 <label for="album">
+            </div>
+            <div>
+                <label for="album">
                     Álbuns
                 </label>
                 <input id="album" type="text" formControlAlbum="album">
-        </div>
-        <div>
+            </div>
+            <div>
                 <label for="single">
                     Singles
                 </label>
                 <input id="single" type="text" formControlSingle="single">
-        </div>
+            </div>
 
-                <button class="button" type="submit">Postar</button>
+            <button class="button" type="submit">atualizar</button>
 
-    </form>
-</div>
+        </form> -->
+    </div>
+    <div>
+        <form [formGroup]="rappersForm" (ngSubmit)="addRapper(rappersForm.value)">
+            <div>
+                <label for="picture">
+                    Foto
+                </label>
+                <input id="picture" type="text" formControlName="picture">
+            </div>
+            <div>
+                <label for="name">
+                    Nome
+                </label>
+                <input id="name" type="text" formControlName="name">
+            </div>
+            <div>
+                <label for="age">
+                    Idade
+                </label>
+                <input id="age" type="number" formControlName="age">
+            </div>
+            <div>
+                <label for="album">
+                    Álbuns
+                </label>
+                <input id="album" type="text" formControlName="album">
+            </div>
+            <div>
+                <label for="single">
+                    Singles
+                </label>
+                <input id="single" type="text" formControlName="single">
+            </div>
+
+            <button class="button" type="submit">Postar</button>
+
+        </form>
+    </div>
 
 </body>
+
 </html>
