@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { RappersService } from '../rappers.service';
 import { FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-rappers',
@@ -21,7 +23,8 @@ export class RappersComponent implements OnInit {
       console.log(dados)
     });
   }
-  addRapper (){
-    this.name.value('rappers')
+  addRapper (rappersFormData){
+    console.log(rappersFormData)
+    this.rappersService.addRapper(rappersFormData)
   }
 }
