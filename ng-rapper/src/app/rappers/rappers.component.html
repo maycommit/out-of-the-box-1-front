@@ -31,7 +31,7 @@
             </ul>
             <button (click)="deleteRapper(rapper.id)">Deletar</button>
             <div>
-                <form [formGroup]="rapperForm" (ngSubmit)="updateRapper(rapperForm.value)">
+                <form [formGroup]="rappersForm" (ngSubmit)="updateRapper(rapper.id, rappersForm.value)">
                     <div>
                         <label for="picture">
                             Foto
@@ -63,8 +63,9 @@
                         <input id="single" type="text" formControlName="single">
                     </div>
 
+                    <button class="button" type="submit">Editar</button>
                 </form>
-                <button (click)="updateRapper(rapper.id)">Editar</button>
+                
             </div>
 
         </li>
