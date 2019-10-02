@@ -12,26 +12,25 @@
     <h1>Rappers</h1>
     <div>
         <li *ngFor="let rapper of rappers, index as i; trackBy: trackByFn">
-            <ul>
+            <ul style="list-style-type:disc;">
                 <span><img src="{{rapper.picture}}" width="380" height="300"></span>
-                <br>
-                <br>
-                <h3>
-                    Nome: <span>{{rapper.name}}</span>
-                    <br>
-                    <br>
-                    Idade: <span>{{rapper.age}}</span>
-                    <br>
-                    <br>
-                    Álbuns: <span>{{rapper.album}}</span>
-                    <br>
-                    <br>
-                    Singles: <span>{{rapper.single}}</span>
-                </h3>
+                <li>
+                    <h3>Nome</h3><span>{{rapper.name}}</span>
+                </li>
+                <li>
+                    <h3>Idade</h3><span>{{rapper.age}}</span>
+                </li>
+                <li>
+                    <h3>Álbuns</h3><span>{{rapper.album}}</span>
+                </li>
+                <li>
+                    <h3>Single</h3><span>{{rapper.single}}</span>
+                </li>
             </ul>
             <button (click)="deleteRapper(rapper.id)">Deletar</button>
             <div>
                 <form [formGroup]="rappersForm" (ngSubmit)="updateRapper(rapper.id, rappersForm.value)">
+                    <br>
                     <div>
                         <label for="picture">
                             Foto
@@ -65,14 +64,11 @@
 
                     <button class="button" type="submit">Editar</button>
                 </form>
-                
+
             </div>
 
         </li>
     </div>
-
-
-
     <div>
         <form [formGroup]="rappersForm" (ngSubmit)="addRapper(rappersForm.value)">
             <div>
