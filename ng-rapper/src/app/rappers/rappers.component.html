@@ -32,45 +32,45 @@
             <button (click)="deleteRapper(rapper.id)">Deletar</button>
             <div>
                 <form [formGroup]="rapperForm" (ngSubmit)="updateRapper(rapperForm.value)">
-                   <div>
-                       <label for="picture">
-                           Foto
-                       </label>
-                       <input id="picture" type="text" formControlName="picture">
-                   </div>
-                   <div>
-                       <label for="name">
-                           Nome
-                       </label>
-                       <input id="name" type="text" formControlName="name">
-                   </div>
-                   <div>
-                       <label for="age">
-                           Idade
-                       </label>
-                       <input id="age" type="number" formControlAge="age">
-                   </div>
-                   <div>
-                       <label for="album">
-                           Álbuns
-                       </label>
-                       <input id="album" type="text" formControlName="album">
-                   </div>
-                   <div>
-                       <label for="single">
-                           Singles
-                       </label>
-                       <input id="single" type="text" formControlName="single">
-                   </div>
-       
-               </form>
-               <button (click)="updateRapper(rapper.id)">Editar</button>
-           </div>
-           
+                    <div>
+                        <label for="picture">
+                            Foto
+                        </label>
+                        <input id="picture" type="text" formControlName="picture">
+                    </div>
+                    <div>
+                        <label for="name">
+                            Nome
+                        </label>
+                        <input id="name" type="text" formControlName="name">
+                    </div>
+                    <div>
+                        <label for="age">
+                            Idade
+                        </label>
+                        <input id="age" type="number" formControlAge="age">
+                    </div>
+                    <div>
+                        <label for="album">
+                            Álbuns
+                        </label>
+                        <input id="album" type="text" formControlName="album">
+                    </div>
+                    <div>
+                        <label for="single">
+                            Singles
+                        </label>
+                        <input id="single" type="text" formControlName="single">
+                    </div>
+
+                </form>
+                <button (click)="updateRapper(rapper.id)">Editar</button>
+            </div>
+
         </li>
     </div>
 
-    
+
 
     <div>
         <form [formGroup]="rappersForm" (ngSubmit)="addRapper(rappersForm.value)">

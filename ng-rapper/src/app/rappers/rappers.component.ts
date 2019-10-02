@@ -15,35 +15,35 @@ export class RappersComponent implements OnInit {
     private formBuilder: FormBuilder) {
 
     this.rappersForm = this.formBuilder.group({
-      picture: "", 
-      name:"",
-      age:"",
-      album:"",
-      single:""
+      picture: "",
+      name: "",
+      age: "",
+      album: "",
+      single: ""
 
     })
-   }
+  }
 
   ngOnInit() {
     this.listar();
   }
   listar() {
-    this.rappersService.listar().subscribe (dados => {
+    this.rappersService.listar().subscribe(dados => {
       this.rappers = dados;
       console.log(dados);
     });
   }
-  addRapper (rappersFormData){
+  addRapper(rappersFormData) {
     console.log(rappersFormData);
-    this.rappersService.addRappers(rappersFormData).subscribe(() => console.log('uhuuul'));
+    this.rappersService.addRappers(rappersFormData).subscribe(() => console.log('adicionar'));
   }
 
   deleteRapper(id) {
-    this.rappersService.deleteRapper(id).subscribe(() => console.log('uhuuul'));
+    this.rappersService.deleteRapper(id).subscribe(() => console.log('adicionar'));
   }
 
-  updateRapper(id, rappersFormData){
+  updateRapper(id, rappersFormData) {
     console.log(rappersFormData);
-    this.rappersService.updateRapper(id, rappersFormData).subscribe(() => console.log('atualizado'));
+    this.rappersService.updateRapper(id, rappersFormData).subscribe(() => console.log('atualizar'));
   }
 }
