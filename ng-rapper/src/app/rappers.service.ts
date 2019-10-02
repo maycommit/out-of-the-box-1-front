@@ -35,21 +35,21 @@ export class RappersService {
 
   }
   addRappers(rapper): Observable<Rapper> {
-    console.log('batata');
+    console.log('adicionar');
     return this.http.post<Rapper>(`${this.rappersUrl}/new`, rapper, httpOptions)
-      .pipe(catchError((e, teste) => console.log(e, teste)));
+      .pipe(catchError((e, teste) => console.log(e, teste))
+      );
   }
 
-  addRapper(rapper): Observable<Rapper> {
-    return this.http.post<Rapper>(this.rappersUrl, rapper, httpOptions).pipe(
-      tap((rapper: Rapper) => console.log(`adicionar um rapper id=${rapper.id}`))
-    );
-  }
-
+  // addRapper(rapper): Observable<Rapper> {
+  //   return this.http.post<Rapper>(this.rappersUrl, rapper, httpOptions).pipe(
+  //     tap((rapper: Rapper) => console.log(`adicionar um rapper id=${rapper.id}`))
+  //   );
+  // }
   updateRapper(id, rapper): Observable<any> {
-    const url = `${this.rappersUrl}/${id}`;
-    return this.http.put(url, rapper, httpOptions).pipe(
-      tap(_ => console.log(`atualiza o rapper pelo id=`))
+    console.log('atualizar');
+    return this.http.put<Rapper>(`${this.rappersUrl}/update/{id}`, rapper, httpOptions)
+    .pipe(tap(_ => console.log(`atualiza o rapper pelo id`))
     );
   }
 

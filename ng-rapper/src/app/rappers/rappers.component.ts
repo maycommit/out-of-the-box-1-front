@@ -44,6 +44,6 @@ export class RappersComponent implements OnInit {
 
   updateRapper(id, rappersFormData){
     console.log(rappersFormData)
-    this.rappersService.updateRapper(id, rappersFormData);
+    this.rappersService.updateRapper(id, rappersFormData).subscribe(() => console.log('atualizado'));
   }
 }
