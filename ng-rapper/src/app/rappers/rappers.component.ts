@@ -35,8 +35,7 @@ export class RappersComponent implements OnInit {
   }
   addRapper(rappersFormData) {
     console.log(rappersFormData);
-    this.rappersService.addRapper(rappersFormData);
-    this.rappersService.addRappers(rappersFormData).subscribe(() => console.log('adicionar'))
+    this.rappersService.addRappers(rappersFormData).subscribe(() => console.log('adicionar'));
   }
 
   deleteRapper(id) {
