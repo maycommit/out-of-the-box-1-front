@@ -19,9 +19,9 @@ export class RappersComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.listar();
+    this.getRapper();
   }
-  listar() {
+  getRapper() {
     this.rappersService.listar().subscribe (dados => {
       this.rappers = dados
       console.log(dados)
@@ -29,7 +29,7 @@ export class RappersComponent implements OnInit {
   }
   addRapper (rappersFormData){
     console.log(rappersFormData);
-    this.rappersService.addRapper(rappersFormData)
+    this.rappersService.addRapper(rappersFormData);
   }
 
   deleteRapper(id, rappersFormData) {
