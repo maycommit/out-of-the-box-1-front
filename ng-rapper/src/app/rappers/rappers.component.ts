@@ -9,14 +9,20 @@ import { Rapper } from '../rapper';
   styleUrls: ['./rappers.component.css']
 })
 export class RappersComponent implements OnInit {
-  name = new FormControl(''); 
+  rappersForm;
   rappers: Array<any>;
   constructor(private rappersService: RappersService,
     private formBuilder: FormBuilder) {
 
-    this.formBuilder.group({
+    this.rappersForm = this.formBuilder.group({
+      picture: "",
+      name: "",
+      age: "",
+      album: "",
+      single: ""
+
     })
-   }
+  }
 
   ngOnInit() {
     this.getRapper();
@@ -27,18 +33,17 @@ export class RappersComponent implements OnInit {
       console.log(dados)
     });
   }
-  addRapper (rappersFormData){
+  addRapper(rappersFormData) {
     console.log(rappersFormData);
-    this.rappersService.addRapper(rappersFormData);
+    this.rappersService.addRappers(rappersFormData).subscribe(() => console.log('adicionar'));
   }
 
-  deleteRapper(id, rappersFormData) {
-    console.log(rappersFormData);
-    this.rappersService.deleteRapper(rappersFormData);
+  deleteRapper(id) {
+    this.rappersService.deleteRapper(id).subscribe(() => console.log('adicionar'));
   }
 
-  updateRapper(id, rappersFormData){
-    console.log(rappersFormData)
-    this.rappersService.updateRapper(id, rappersFormData);
+  updateRapper(id, rappersFormData) {
+    console.log(rappersFormData);
+    this.rappersService.updateRapper(id, rappersFormData).subscribe(() => console.log('atualizar'));
   }
 }
