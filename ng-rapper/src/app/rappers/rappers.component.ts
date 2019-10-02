@@ -25,17 +25,18 @@ export class RappersComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.listar();
+    this.getRapper();
   }
-  listar() {
-    this.rappersService.listar().subscribe(dados => {
-      this.rappers = dados;
-      console.log(dados);
+  getRapper() {
+    this.rappersService.listar().subscribe (dados => {
+      this.rappers = dados
+      console.log(dados)
     });
   }
   addRapper(rappersFormData) {
     console.log(rappersFormData);
-    this.rappersService.addRappers(rappersFormData).subscribe(() => console.log('adicionar'));
+    this.rappersService.addRapper(rappersFormData);
+    this.rappersService.addRappers(rappersFormData).subscribe(() => console.log('adicionar'))
   }
 
   deleteRapper(id) {
