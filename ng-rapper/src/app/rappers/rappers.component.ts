@@ -29,8 +29,8 @@ export class RappersComponent implements OnInit {
   }
   listar() {
     this.rappersService.listar().subscribe (dados => {
-      this.rappers = dados
-      console.log(dados)
+      this.rappers = dados;
+      console.log(dados);
     });
   }
   addRapper (rappersFormData){
@@ -43,7 +43,7 @@ export class RappersComponent implements OnInit {
   }
 
   updateRapper(id, rappersFormData){
-    console.log(rappersFormData)
+    console.log(rappersFormData);
     this.rappersService.updateRapper(id, rappersFormData).subscribe(() => console.log('atualizado'));
   }
 }
