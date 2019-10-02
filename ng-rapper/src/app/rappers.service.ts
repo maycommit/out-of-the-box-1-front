@@ -41,10 +41,10 @@ export class RappersService {
       );
   }
 
-  updateRapper(id, rapper): Observable<any> {
+  updateRapper(id, rapper): Observable<Rapper> {
     console.log('atualizar');
     return this.http.put<Rapper>(`${this.rappersUrl}/update/${id}`, rapper, httpOptions)
-      .pipe(tap(_ => console.log(`atualiza o rapper pelo id`))
+      .pipe(catchError((e, rapper) => console.log(e, rapper))
       );
   }
 
