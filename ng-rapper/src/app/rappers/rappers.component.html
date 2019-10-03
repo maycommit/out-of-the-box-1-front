@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div style="background-color:rgb(255, 165, 0);">
+        <h1 style="background-color:black;color:aliceblue;text-align: center">*Acervo Rap*</h1>
         <ins>
-            <h1 style="background-color:black;color:aliceblue;">*Acervo Rap*</h1>
+            <h1>Lista de Rappers</h1>
         </ins>
-        <h1>Lista de Rappers</h1>
-        <li *ngFor="let rapper of rappers, index as i; trackBy: trackByFn">
+        <span *ngFor="let rapper of rappers, index as i; trackBy: trackByFn">
             <table>
                 <tr>
                     <td><span><img src="{{rapper.picture}}" width="380" height="300"></span></td>
                     <td>
-                        <h2>Nome:</h2><span>
-                            <h4>{{rapper.name}}</h4>
+                        <h2>Nome do rapper:</h2><span>
+                            <h3>{{rapper.name}}</h3>
                         </span>
-                        <h2>Idade:</h2><span>
-                            <h4>{{rapper.age}}</h4>
+                        <h2>Idade do rapper:</h2><span>
+                            <h3>{{rapper.age}}</h3>
                         </span>
-                        <h2>Álbuns:</h2><span>
-                            <h4>{{rapper.album}}</h4>
+                        <h2>Álbum Referência:</h2><span>
+                            <h3>{{rapper.album}}</h3>
                         </span>
-                        <h2>Single:</h2><span>
-                            <h4>{{rapper.single}}</h4>
+                        <h2>Single Referência:</h2><span>
+                            <h3>{{rapper.single}}</h3>
                         </span>
                     </td>
                 </tr>
@@ -40,31 +41,31 @@
                     <br>
                     <div>
                         <label for="picture">
-                            Foto
+                            Url da Foto
                         </label>
                         <input id="picture" type="text" formControlName="picture">
                     </div>
                     <div>
                         <label for="name">
-                            Nome
+                            Nome do rapper
                         </label>
                         <input id="name" type="text" formControlName="name">
                     </div>
                     <div>
                         <label for="age">
-                            Idade
+                            Idade do rapper
                         </label>
                         <input id="age" type="number" formControlAge="age">
                     </div>
                     <div>
                         <label for="album">
-                            Álbuns
+                            Álbum Referência
                         </label>
                         <input id="album" type="text" formControlName="album">
                     </div>
                     <div>
                         <label for="single">
-                            Singles
+                            Single Referência
                         </label>
                         <input id="single" type="text" formControlName="single">
                     </div>
@@ -74,38 +75,38 @@
 
             </div>
             <hr />
-        </li>
+        </span>
         <ins>
             <h1>Postar um novo Rapper:</h1>
         </ins>
         <form [formGroup]="rappersForm" (ngSubmit)="addRapper(rappersForm.value)">
             <div>
                 <label for="picture">
-                    Foto
+                    Url da Foto
                 </label>
                 <input id="picture" type="text" formControlName="picture">
             </div>
             <div>
                 <label for="name">
-                    Nome
+                    Nome do rapper
                 </label>
                 <input id="name" type="text" formControlName="name">
             </div>
             <div>
                 <label for="age">
-                    Idade
+                    Idade do rapper
                 </label>
                 <input id="age" type="number" formControlName="age">
             </div>
             <div>
                 <label for="album">
-                    Álbuns
+                    Álbum Referência
                 </label>
                 <input id="album" type="text" formControlName="album">
             </div>
             <div>
                 <label for="single">
-                    Singles
+                    Single Referência
                 </label>
                 <input id="single" type="text" formControlName="single">
             </div>
