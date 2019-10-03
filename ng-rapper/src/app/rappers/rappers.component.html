@@ -9,24 +9,31 @@
 </head>
 
 <body>
-    <h1>Rappers</h1>
-    <div>
+    <div style="background-color:rgb(255, 165, 0);">
+        <ins>
+            <h1 style="background-color:black;color:aliceblue;">*Acervo Rap*</h1>
+        </ins>
+        <h1>Lista de Rappers</h1>
         <li *ngFor="let rapper of rappers, index as i; trackBy: trackByFn">
-            <ul style="list-style-type:disc;">
-                <span><img src="{{rapper.picture}}" width="380" height="300"></span>
-                <li>
-                    <h3>Nome</h3><span>{{rapper.name}}</span>
-                </li>
-                <li>
-                    <h3>Idade</h3><span>{{rapper.age}}</span>
-                </li>
-                <li>
-                    <h3>Álbuns</h3><span>{{rapper.album}}</span>
-                </li>
-                <li>
-                    <h3>Single</h3><span>{{rapper.single}}</span>
-                </li>
-            </ul>
+            <table>
+                <tr>
+                    <td><span><img src="{{rapper.picture}}" width="380" height="300"></span></td>
+                    <td>
+                        <h2>Nome:</h2><span>
+                            <h4>{{rapper.name}}</h4>
+                        </span>
+                        <h2>Idade:</h2><span>
+                            <h4>{{rapper.age}}</h4>
+                        </span>
+                        <h2>Álbuns:</h2><span>
+                            <h4>{{rapper.album}}</h4>
+                        </span>
+                        <h2>Single:</h2><span>
+                            <h4>{{rapper.single}}</h4>
+                        </span>
+                    </td>
+                </tr>
+            </table>
             <button (click)="deleteRapper(rapper.id)">Deletar</button>
             <div>
                 <form [formGroup]="rappersForm" (ngSubmit)="updateRapper(rapper.id, rappersForm.value)">
@@ -66,10 +73,11 @@
                 </form>
 
             </div>
-
+            <hr />
         </li>
-    </div>
-    <div>
+        <ins>
+            <h1>Postar um novo Rapper:</h1>
+        </ins>
         <form [formGroup]="rappersForm" (ngSubmit)="addRapper(rappersForm.value)">
             <div>
                 <label for="picture">
