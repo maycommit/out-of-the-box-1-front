@@ -44,7 +44,7 @@ export class RappersService {
   updateRapper(id, rapper): Observable<Rapper> {
     console.log('atualizar', rapper);
     return this.http.put<Rapper>(`${this.rappersUrl}/update/${id}`, rapper, httpOptions)
-      .pipe(catchError((e, rapper) => console.log(e, rapper))
+      .pipe(catchError((e, Rapper) => console.log(e, rapper))
       );
   }
 
