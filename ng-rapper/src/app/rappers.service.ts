@@ -18,7 +18,7 @@ export class RappersService {
   constructor(private http: HttpClient) { }
 
   listar() {
-    return this.http.get<any[]>(`${this.rappersUrl}`);
+    return this.http.get<Rapper[]>(`${this.rappersUrl}`);
   }
 
   getRappers(): Observable<Rapper[]> {
