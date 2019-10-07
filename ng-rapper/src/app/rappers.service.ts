@@ -37,7 +37,7 @@ export class RappersService {
   addRappers(rapper): Observable<Rapper> {
     console.log('adicionar');
     return this.http.post<Rapper>(`${this.rappersUrl}/new`, rapper, httpOptions)
-      .pipe(catchError((e, teste) => console.log(e, teste))
+      .pipe(catchError((e, rapper) => console.log(e, rapper))
       );
   }
 
