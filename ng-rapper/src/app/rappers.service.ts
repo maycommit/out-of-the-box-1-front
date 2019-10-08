@@ -37,15 +37,15 @@ export class RappersService {
   addRappers(rapper): Observable<Rapper> {
     console.log('adicionar');
     return this.http.post<Rapper>(`${this.rappersUrl}/new`, rapper, httpOptions)
-      .pipe(catchError((e, rapper) => console.log(e, rapper))
-      );
+      .pipe(catchError(e => () => {}));
+      
   }
 
   updateRapper(id, rapper): Observable<Rapper> {
     console.log('atualizar', rapper);
     return this.http.put<Rapper>(`${this.rappersUrl}/update/${id}`, rapper, httpOptions)
-      .pipe(catchError((e, Rapper) => console.log(e, rapper))
-      );
+      .pipe(catchError(e => () => {}));
+      
   }
 
   deleteRapper(id): Observable<Rapper> {
