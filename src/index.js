@@ -1,2 +1,2 @@
-import {rappers} from './rappers';
+const rappers = require('./mock/rappers.json')
 
