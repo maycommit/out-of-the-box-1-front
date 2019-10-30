@@ -1,13 +1,22 @@
 const rappers = require('./mock/rappers.json')
+//colocar lista no html
+//adicionar botão de remover em cada um dos rappers
+//adicionar funcionalidade remoção
+//adiconar funcionalidade de reverter remoção
+//criar rapper
+//melhorar código
 
 let rapperAlive = rappers
-rapperAlive = rappers.map(rapper => ` <span> ${rapper.name}</span> <br> 
+let htmlRapper = []
+
+htmlRapper = rapperAlive.map(rapper => `<span> ${rapper.name}</span> <br> 
 <span> ${rapper.age}</span> <br> 
 <span> ${rapper.album}</span> <br>
 <span> ${rapper.single}</span>`)
-const aliveHtml = alive.join('')
+const aliveHtml = htmlRapper.join('')
 
-document.getElementById('Lista').innerHTML = aliveHtml
+document.getElementById('lista').innerHTML = aliveHtml
+/*
 document.getElementById('criar').addEventListener('submit', (e) => {
     e.preventDefault()
     
@@ -26,7 +35,6 @@ document.getElementById('criar').addEventListener('submit', (e) => {
     const newRapper = alive.join('')
     document.getElementById('Lista').innerHTML = aliveHtml
 })
-const rappers = require('./mock/remover.json')
 
 
 document.getElementById('remove').addEventListener('click', () => {
@@ -42,4 +50,4 @@ document.getElementById('remove').addEventListener('click', () => {
   
     document.getElementById('rappersList').innerHTML = html
   })
-
+*/
